@@ -1,0 +1,28 @@
+<html>
+ 
+<head>
+    <title>Sample App</title>
+    <base href="/" />
+    <script src="/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="/node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="/node_modules/angular2/bundles/http.dev.js"></script>
+ 
+    <script>
+          System.config({
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+        System.import('./js/bootstrap.js');
+    </script>
+</head>
+ 
+<body>
+    <my-app>Loading...</my-app>
+</body>
+ 
+</html>
