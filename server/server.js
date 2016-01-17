@@ -28,7 +28,7 @@ var app = express();
 
 app.use(express.static(__dirname + '/../public'));
 app.use('/node_modules', express.static(path.resolve('./node_modules')));
-app.get('/', function (req, res) {
+app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname + '/../public/index.html'));
 });
 

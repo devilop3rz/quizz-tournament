@@ -9,27 +9,26 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var AppComponent;
+    var Gamepad;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
-                    this.titleName = "Hello from Home";
+            Gamepad = (function () {
+                function Gamepad() {
                 }
-                AppComponent = __decorate([
+                Gamepad = __decorate([
                     core_1.Component({
-                        template: '<h1>{{titleName}}</h1>',
-                        selector: 'quizz-tournament'
+                        selector: 'gamepad',
+                        template: 'this is the gamepad'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], Gamepad);
+                return Gamepad;
             })();
-            exports_1("AppComponent", AppComponent);
+            exports_1("Gamepad", Gamepad);
         }
     }
 });

@@ -24,9 +24,9 @@ gulp.task('build:index', function(){
     var mappedPaths = jsNPMDependencies.map( function (file) {return path.resolve('node_modules', file)})
     
     var copyJsNPMDependencies = gulp.src(mappedPaths, {base:'node_modules'})
-        .pipe(gulp.dest('dist/libs'))
+        .pipe(gulp.dest('public/libs'))
     var copyIndex = gulp.src('app/index.html')
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('public'))
     return [copyJsNPMDependencies, copyIndex];
 });
 
@@ -47,7 +47,7 @@ gulp.task('buildapp', function(){
 
     return tsResult.js
         .pipe(sourcemaps.write()) 
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('public/js'));
 });
 
 

@@ -1,3 +1,4 @@
+
 {
   "compilerOptions": {
     "target": "ES5",
@@ -9,17 +10,7 @@
     "removeComments": false,
     "noImplicitAny": false
   },
-  "filesGlob": [
-    "./**/*.ts"
-  ],
-   "exclude": [
+  "exclude": [
     "node_modules"
-  ],
-  "files": [
-        "node_modules/angular2/bundles/typings/angular2/angular2.d.ts",
-        "node_modules/angular2/bundles/typings/angular2/http.d.ts",
-        "node_modules/angular2/bundles/typings/angular2/router.d.ts",
-        "node_modules/@reactivex/rxjs/es6/R.d.ts",
-        "src/hiya.ts"
   ]
 }
