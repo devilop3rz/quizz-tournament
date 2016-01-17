@@ -1,4 +1,4 @@
-System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router', './components/shared/splashscreen', './components/shared/lobby', './components/player/menu', './components/player/gamepad', './components/player/creategame', './components/host/gamescreen'], function(exports_1) {
+System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router', './components/shared/splashscreen', './components/shared/lobby', './components/player/menu', './components/player/gamepad', './components/player/gamecreator', './components/player/gamelist', './components/player/playersettings', './components/host/gamescreen'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var browser_1, core_1, router_1, splashscreen_1, lobby_1, menu_1, gamepad_1, creategame_1, gamescreen_1;
+    var browser_1, core_1, router_1, splashscreen_1, lobby_1, menu_1, gamepad_1, gamecreator_1, gamelist_1, playersettings_1, gamescreen_1;
     var AppComponent;
     return {
         setters:[
@@ -33,8 +33,14 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
             function (gamepad_1_1) {
                 gamepad_1 = gamepad_1_1;
             },
-            function (creategame_1_1) {
-                creategame_1 = creategame_1_1;
+            function (gamecreator_1_1) {
+                gamecreator_1 = gamecreator_1_1;
+            },
+            function (gamelist_1_1) {
+                gamelist_1 = gamelist_1_1;
+            },
+            function (playersettings_1_1) {
+                playersettings_1 = playersettings_1_1;
             },
             function (gamescreen_1_1) {
                 gamescreen_1 = gamescreen_1_1;
@@ -76,8 +82,16 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
                             component: menu_1.Menu,
                             name: 'Menu'
                         }, {
+                            path: '/player/game-selection',
+                            component: gamelist_1.GameList,
+                            name: 'GameSelection'
+                        }, {
+                            path: '/player/settings',
+                            component: playersettings_1.PlayerSettings,
+                            name: 'PlayerSettings'
+                        }, {
                             path: '/player/create-game',
-                            component: creategame_1.GameCreator,
+                            component: gamecreator_1.GameCreator,
                             name: 'CreateGame'
                         }, {
                             path: '/player/gamepad',
@@ -87,7 +101,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
                     ]),
                     core_1.View({
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        template: "\n  <div>\n    <nav>\n      <a>Navigation:</a>\n    \t<ul>\n    \t\t<li><a [routerLink]=\"['/Splashscreen', {type:'host'}]\">splash host</a></li>\n    \t\t<li><a [routerLink]=\"['/Splashscreen', {type:'player'}]\">splash player</a></li>\n    \t\t<li><a [routerLink]=\"['/Menu']\">Menu</a></li>\n    \t</ul>\n    </nav>\n \n    <router-outlet></router-outlet>\n  </div>\n "
+                        template: "\n  <div>\n    <nav>\n      <a>Navigation:</a>\n    \t<ul>\n    \t\t<li><a [routerLink]=\"['/Splashscreen', {type:'host'}]\">splash host</a></li>\n    \t\t<li><a [routerLink]=\"['/Splashscreen', {type:'player'}]\">splash player</a></li>\n    \t\t<li><a [routerLink]=\"['/Menu']\">Menu</a></li>\n    \t</ul>\n    </nav>\n \t<div class=\"container\">\n\t\t<router-outlet></router-outlet>\n \t</div>\n    \n  </div>\n "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

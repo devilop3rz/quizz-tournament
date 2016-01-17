@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router'], function(exports_1) {
+System.register(['angular2/core'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,31 +8,39 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1;
-    var Menu;
+    var core_1;
+    var Player, PlayerSettings;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
             }],
         execute: function() {
-            Menu = (function () {
-                function Menu() {
+            Player = (function () {
+                function Player(name, pic) {
+                    this.name = name;
+                    this.pic = pic;
                 }
-                Menu = __decorate([
+                return Player;
+            })();
+            PlayerSettings = (function () {
+                function PlayerSettings() {
+                    this.player = new Player('Default', '');
+                }
+                PlayerSettings.prototype.onsubmit = function () {
+                    // Set the player settings and send them over to the server
+                    console.log('Set player setting:' + this.player.name);
+                };
+                PlayerSettings = __decorate([
                     core_1.Component({
-                        selector: 'menu',
-                        directives: [router_1.ROUTER_DIRECTIVES],
-                        template: "\n\t\t<header>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-xs-12\"><h3>Menu</h3></div>\n\t\t\t</div>\n\t\t</header>\n\t\t<section>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-xs-12\">\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li><a [routerLink]=\"['CreateGame']\">Create Game</a></li>\n\t\t\t\t\t\t<li><a [routerLink]=\"['GameSelection']\">Join Game</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</section>\n\t"
+                        selector: 'gamepad',
+                        template: "\n\t\t\n\t\t<form (ngSubmit)=\"onSubmit()\">\n\t\t\t<input type=\"text\" [(ngModel)]=\"player.name\"/>\n\t\t</form>\n\n\t"
                     }), 
                     __metadata('design:paramtypes', [])
-                ], Menu);
-                return Menu;
+                ], PlayerSettings);
+                return PlayerSettings;
             })();
-            exports_1("Menu", Menu);
+            exports_1("PlayerSettings", PlayerSettings);
         }
     }
 });

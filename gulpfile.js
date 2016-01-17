@@ -6,6 +6,7 @@ var del = require('del');
 var concat = require('gulp-concat')
 var runSequence = require('run-sequence');
 
+var watch = require('gulp-watch');
 
 // CLIENT
 
@@ -30,26 +31,30 @@ gulp.task('build:index', function(){
     return [copyJsNPMDependencies, copyIndex];
 });
 
-gulp.task('buildapp', function(){
-    var tsProject = ts.createProject('app/tsconfig.json');
-   // var tsResult = gulp.src('app/**/*.ts')
-    //    .pipe(sourcemaps.init())
-      //  .pipe(ts(tsProject))
 
-        var tsResult = gulp.src([
-      "node_modules/angular2/bundles/typings/angular2/angular2.d.ts",
-      "node_modules/angular2/bundles/typings/angular2/http.d.ts",
-      "node_modules/angular2/bundles/typings/angular2/router.d.ts",
-      "node_modules/@reactivex/rxjs/dist/es6/Rx.d.ts",
-      "app/**/*.ts"
-    ])
-    .pipe(ts(tsProject), undefined, ts.reporter.fullReporter());
+function buildApp() {
+  var tsProject = ts.createProject('app/tsconfig.json');
+  var tsResult = gulp.src([
+    "node_modules/angular2/bundles/typings/angular2/angular2.d.ts",
+    "node_modules/angular2/bundles/typings/angular2/http.d.ts",
+    "node_modules/angular2/bundles/typings/angular2/router.d.ts",
+    "node_modules/@reactivex/rxjs/dist/es6/Rx.d.ts",
+    "app/**/*.ts"
+  ])
+  .pipe(ts(tsProject), undefined, ts.reporter.fullReporter());
 
-    return tsResult.js
-        .pipe(sourcemaps.write()) 
-        .pipe(gulp.dest('public/js'));
+  return tsResult.js
+    .pipe(sourcemaps.write()) 
+    .pipe(gulp.dest('public/js'));
+}var watch = require('gulp-watch');
+
+
+
+gulp.task('buildapp', buildApp);
+
+gulp.task('watch', function () {
+ gulp.watch('app/**/*.ts', ['buildapp']);
 });
-
 
 gulp.task('build', function(callback){
     runSequence('clean', 'build:server', 'build:index', 'build:app', callback);

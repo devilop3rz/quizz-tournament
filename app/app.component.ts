@@ -8,7 +8,7 @@ import {Menu} from './components/player/menu'
 import {Gamepad} from './components/player/gamepad'
 import {GameCreator} from './components/player/gamecreator'
 import {GameList} from './components/player/gamelist'
-import {GameSettings} from './components/player/gamesettings'
+import {PlayerSettings} from './components/player/playersettings'
 import {GameSreeen} from './components/host/gamescreen'
 
 
@@ -48,23 +48,15 @@ import {GameSreeen} from './components/host/gamescreen'
       	path: '/player/menu', 
     	component: Menu, 
     	name: 'Menu'
-    }{
+    },{
       	path: '/player/game-selection', 
     	component: GameList, 
     	name: 'GameSelection'
-    }{
-      	path: '/player/settings', 
-    	component: GameSettings, 
-    	name: 'PlayerSettings'
     },{
-      	path: '/player/menu', 
-    	component: Menu, 
-    	name: 'Menu'
-    }{
-      	path: '/player/menu', 
-    	component: Menu, 
-    	name: 'Menu'
-    }{ 
+      	path: '/player/settings', 
+    	component: PlayerSettings, 
+    	name: 'PlayerSettings'
+    },{ 
     	path: '/player/create-game', 
     	component: GameCreator, 
     	name: 'CreateGame'
@@ -87,8 +79,10 @@ import {GameSreeen} from './components/host/gamescreen'
     		<li><a [routerLink]="['/Menu']">Menu</a></li>
     	</ul>
     </nav>
- 
-    <router-outlet></router-outlet>
+ 	<div class="container">
+		<router-outlet></router-outlet>
+ 	</div>
+    
   </div>
  ` 
 })
