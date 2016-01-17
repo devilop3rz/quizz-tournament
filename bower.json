@@ -1,0 +1,21 @@
+{
+  "name": "Quizz Tournament",
+  "description": "",
+  "main": "server/server",
+  "authors": [
+    "Marvin Ernst <devilop3rz@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/devilop3rz/quizz-tournament",
+  "moduleType": [
+    "globals"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
