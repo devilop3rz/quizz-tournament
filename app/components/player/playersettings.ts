@@ -1,7 +1,8 @@
 import {Component} from 'angular2/core'
 import {NgForm} from 'angular2/common'
 import {Router} from 'angular2/router'
-
+import {SocketService} from '../../services/socket.service'
+console.log(SocketService)
 class Player {
 
 	constructor(
@@ -9,11 +10,11 @@ class Player {
 		public pic:string,
 		public color:string
 	) {}
-	
 }
 
 @Component({
 	selector: 'gamepad',
+    providers: [SocketService],
 	template: `
 		{{diagnostic}}
 
@@ -44,16 +45,20 @@ class Player {
 export class PlayerSettings {
 
 	public player:Player = new Player('Default', '', '#123456');
-	constructor(
-		public _router:Router
-	)
-	{}
-    onSubmit() {
+
+	constructor(public _router:Router, public _socket:SocketService){ 
+        this._socket.init();
+		this._socket.on('welcome',(data:any) => {
+            console.log('WIlkommen mein nasenbär');
+		})
+	}
+
+	onSubmit() {
 		// Set the player settings and send them over to the server
 		console.log('Set player setting:' + this.player.name);
 		this._router.navigate(['/Lobby'])
 	}
 
-    get diagnostic() { return JSON.stringify(this.player); }
+	get diagnostic() { return JSON.stringify(this.player); }
 
 }

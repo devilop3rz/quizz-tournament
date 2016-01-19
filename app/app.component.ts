@@ -1,7 +1,7 @@
 import {bootstrap}    from 'angular2/platform/browser'
 import {Component, View} from 'angular2/core';
-
 import {ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES}  from 'angular2/router';
+
 import {Splashscreen} from './components/shared/splashscreen'
 import {Lobby} from './components/shared/lobby'
 import {Menu} from './components/player/menu'
