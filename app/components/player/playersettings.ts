@@ -2,7 +2,9 @@ import {Component} from 'angular2/core'
 import {NgForm} from 'angular2/common'
 import {Router} from 'angular2/router'
 import {SocketService} from '../../services/socket.service'
-console.log(SocketService)
+import {CarouselSelect} from './carousel-select'
+
+
 class Player {
 
 	constructor(
@@ -15,6 +17,7 @@ class Player {
 @Component({
 	selector: 'gamepad',
     providers: [SocketService],
+    directives: [CarouselSelect],
 	template: `
 		{{diagnostic}}
 
@@ -32,6 +35,7 @@ class Player {
 					<option>SpielerChar2</option>
 					<option>SpielerChar3</option>
 				</select>
+				<carousel-select></carousel-select>
 			</div>
 			<div class="form-group">
 				<label for="player-color">Color:</label>

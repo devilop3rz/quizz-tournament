@@ -3,8 +3,10 @@ import {Router} from 'angular2/router'
 import {NgForm} from 'angular2/common'
 import {Game} from './game.class'
 
+
 @Component({
 	selector: 'game-creator-form',
+
 	template: `
 		{{diagnostic}}
 		<form (ngSubmit)="onSubmit()" #gameForm="ngForm">
