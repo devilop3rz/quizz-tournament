@@ -1,4 +1,4 @@
-System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router', './components/shared/splashscreen', './components/shared/lobby', './components/player/menu', './components/player/gamepad', './components/player/gamecreator', './components/player/gamelist', './components/player/playersettings', './components/host/gamescreen'], function(exports_1) {
+System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router', './components/shared/splashscreen', './components/shared/lobby', './components/player/menu', './components/player/gamepad', './components/player/gamecreator', './components/player/gamelist', './components/player/playersettings', './components/host/gamescreen', './services/socket.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var browser_1, core_1, router_1, splashscreen_1, lobby_1, menu_1, gamepad_1, gamecreator_1, gamelist_1, playersettings_1, gamescreen_1;
+    var browser_1, core_1, router_1, splashscreen_1, lobby_1, menu_1, gamepad_1, gamecreator_1, gamelist_1, playersettings_1, gamescreen_1, socket_service_1;
     var AppComponent;
     return {
         setters:[
@@ -44,6 +44,9 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
             },
             function (gamescreen_1_1) {
                 gamescreen_1 = gamescreen_1_1;
+            },
+            function (socket_service_1_1) {
+                socket_service_1 = socket_service_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -107,7 +110,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
                 ], AppComponent);
                 return AppComponent;
             })();
-            browser_1.bootstrap(AppComponent, [router_1.ROUTER_PROVIDERS]);
+            browser_1.bootstrap(AppComponent, [router_1.ROUTER_PROVIDERS, socket_service_1.SocketService]);
         }
     }
 });

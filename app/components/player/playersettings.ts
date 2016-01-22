@@ -1,9 +1,8 @@
 import {Component} from 'angular2/core'
 import {NgForm} from 'angular2/common'
 import {Router} from 'angular2/router'
-import {SocketService} from '../../services/socket.service'
 import {CarouselSelect} from './carousel-select'
-
+import {SocketService} from '../../services/socket.service'
 
 class Player {
 
@@ -16,7 +15,6 @@ class Player {
 
 @Component({
 	selector: 'gamepad',
-    providers: [SocketService],
     directives: [CarouselSelect],
 	template: `
 		{{diagnostic}}
@@ -49,17 +47,18 @@ class Player {
 export class PlayerSettings {
 
 	public player:Player = new Player('Default', '', '#123456');
+	private socket
 
-	constructor(public _router:Router, public _socket:SocketService){ 
-        this._socket.init();
-		this._socket.on('welcome',(data:any) => {
-            console.log('WIlkommen mein nasenbär');
-		})
+    constructor(public _router: Router, public _socketService:SocketService) { 
+        this.socket = this._socketService.getSocket();
 	}
 
 	onSubmit() {
 		// Set the player settings and send them over to the server
 		console.log('Set player setting:' + this.player.name);
+        this.socket.emit('game.join', this.player, (data: any) => {
+            console.log('WIlkommen mein nasenbär');
+        })
 		this._router.navigate(['/Lobby'])
 	}
 

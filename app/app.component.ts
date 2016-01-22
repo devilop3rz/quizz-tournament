@@ -10,7 +10,7 @@ import {GameCreator} from './components/player/gamecreator'
 import {GameList} from './components/player/gamelist'
 import {PlayerSettings} from './components/player/playersettings'
 import {GameSreeen} from './components/host/gamescreen'
-
+import {SocketService} from './services/socket.service'
 
 @Component({
    
@@ -90,10 +90,9 @@ import {GameSreeen} from './components/host/gamescreen'
 class AppComponent {
     titleName: string
     constructor() {
-
         this.titleName = "QUIZZ TORNAMENT"
     }
 
 }
 
-bootstrap(AppComponent, [ROUTER_PROVIDERS]);
+bootstrap(AppComponent, [ROUTER_PROVIDERS, SocketService]);

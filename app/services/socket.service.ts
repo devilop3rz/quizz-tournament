@@ -1,4 +1,3 @@
-import {Inject} from 'angular2/core';
 
 declare var io: {
     connect(url: string): Socket;
@@ -7,21 +6,29 @@ declare var io: {
 interface Socket {
     on(event: string, callback: (data: any) => void);
     emit(event: string, data: any);
+    disconnect();
 }
 
 export class SocketService {
 
-    public socket:Socket;
+    private socket:Socket;
 
     init() {
-        this.socket = io.connect('localhost:30200');
-        console.log('Create Connection')
+        this.socket = io.connect('localhost:3000');
+        window.onbeforeunload = (e) => {
+            this.socket.disconnect();
+        };
+        return this.socket
     }
 
     on(eventName: string, callback: (data: any) => void) {
         this.socket.on(eventName, (data) => {
             callback(data);
         })
+    }
+
+    getSocket() {
+        return this.socket;
     }
 
     emit(eventName: string, data: any, callback: (data: any) => void) {

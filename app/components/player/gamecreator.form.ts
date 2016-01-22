@@ -2,6 +2,7 @@ import {Component} from 'angular2/core'
 import {Router} from 'angular2/router'
 import {NgForm} from 'angular2/common'
 import {Game} from './game.class'
+import {SocketService} from '../../services/socket.service'
 
 
 @Component({
@@ -32,16 +33,18 @@ export class GameCreationForm {
 	public model = new Game(10, 'QuizzTournament Default Game');
 	
 	private submitted:boolean = false;
+    private socket;
 
 	constructor(
-	 	private _router:Router
-	 ) {}
+	 	private _router:Router,
+	 	private _socketService:SocketService
+	 ) {
+        this.socket = this._socketService.getSocket();
+	}
 	
 	onSubmit() {
 		this.submitted = true;
-		console.log(this.model);
+        this.socket.emit('game.create', this.model);
 		this._router.navigate(['PlayerSettings'])
 	}
-
-	get diagnostic() { return JSON.stringify(this.model); }
 }

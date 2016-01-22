@@ -16,6 +16,10 @@ class Game {
         this.players.push(data);
     }
 
+    getPlayers() {
+        return this.players;
+    }
+
     getQuestion() {
         if (currentQuestionId < this.questionCount) {
             currentQuestionId++;

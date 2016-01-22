@@ -7,13 +7,20 @@ System.register([], function(exports_1) {
                 function SocketService() {
                 }
                 SocketService.prototype.init = function () {
-                    this.socket = io.connect('localhost:30200');
-                    console.log('Create Connection');
+                    var _this = this;
+                    this.socket = io.connect('localhost:3000');
+                    window.onbeforeunload = function (e) {
+                        _this.socket.disconnect();
+                    };
+                    return this.socket;
                 };
                 SocketService.prototype.on = function (eventName, callback) {
                     this.socket.on(eventName, function (data) {
                         callback(data);
                     });
+                };
+                SocketService.prototype.getSocket = function () {
+                    return this.socket;
                 };
                 SocketService.prototype.emit = function (eventName, data, callback) {
                 };
