@@ -51,7 +51,8 @@ class Game {
     }
 
     addPlayer(playerData) {
-        this.players[playerData.socketId] = new Player(playerData);
+
+        this.players[playerData.socketId] = playerData;
     }
 
     removePlayer(data) {
@@ -74,16 +75,11 @@ class Game {
         }
     }
 
-    addAnswer(data, callback) {
-        console.log(data)
-        if(this.answers.length === this.players.length) {
-            this.checkAnswers(callback);
-        } else {
-            this.answers.push(data);
-        } 
+    addAnswer(data) {
+        this.answers.push(data);
     }
 
-    checkAnswers(callback) {
+    checkAnswers() {
         
         var solution = [];
 
@@ -95,7 +91,9 @@ class Game {
                 solution[id] = 0;
             }
         }
-        callback(solution)
+
+        console.log(solution)
+        //callback(solution)
     }
 }
 

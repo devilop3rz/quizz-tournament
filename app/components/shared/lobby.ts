@@ -29,9 +29,12 @@ export class Lobby {
         this.players = [];
 
         this.socket.emit('game.listPlayers', {}, (data) => {
-            console.log('Getting Playerlist');
-            console.log(data)
-            this.players = data;
+			console.group();
+        	console.log('game.listPlayers')
+        	console.log(data)
+			console.groupEnd();
+
+            //this.players = data;
         });
 
         this.socket.on('game.playerLeft', (data) => {
@@ -40,8 +43,7 @@ export class Lobby {
         });
 
         this.socket.on('game.playerJoined', (data) => {
-            console.log('Player joined: ' + data.name);
-            console.log(data)
+        	console.log(data)
             this.players.push(data);
         });
 

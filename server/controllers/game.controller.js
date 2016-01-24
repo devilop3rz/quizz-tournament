@@ -27,13 +27,18 @@ module.exports = function (io) {
             data.socketId = socket.id;
             game.addPlayer(data);
             socket.broadcast.emit('game.playerJoined', data);
+            socket.emit('game.playerJoined', data);
         });
 
         // Lists all created game instances
         socket.on('game.listGames', listGames);
 
         // Lists all the players in the created game instance
-        socket.on('game.listPlayers', listPlayers);
+        socket.on('game.listPlayers', function(data, callback) {
+            console.log('Listing Players');
+            var players = game.getPlayers();
+            callback(players);
+        });
 
         // Start the game.
         socket.on('game.start', function (data, callback) {
@@ -44,7 +49,7 @@ module.exports = function (io) {
 
         socket.on('ready', function () {
             socket.emit('game.question', game.currentQuestion);
-        })
+        });
 
         // Get the next question from the game instance
         socket.on('game.getQuestion', function(data, callback) {
@@ -54,12 +59,10 @@ module.exports = function (io) {
         // Get the next question from the game instance
         socket.on('game.sendAnswer', function(data, callback) {
 
-            game.addAnswer(data, function (data) {
-                console.log(data)
-                console.log('all addAnswers are given and checked');
-                console.log(game.getPlayers());
-            });
-            console.log(game.answers.length)
+            game.addAnswer(data);
+            if(game.answers.length === game.players.length) {
+                game.checkAnswers();
+            }
         });
 
         // Handle disconnection events. Remove disconnected user 
@@ -75,11 +78,6 @@ module.exports = function (io) {
     listGames = function(data, callback) {
         let isCreated = (game) ? true : false;
         callback(isCreated);
-    };
-
-    listPlayers = function(data, callback) {
-        console.log('Listing Players')
-        callback(game.getPlayers());
     };
 
 }

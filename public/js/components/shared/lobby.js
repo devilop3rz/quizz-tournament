@@ -32,16 +32,17 @@ System.register(['angular2/core', '../../services/socket.service', 'angular2/rou
                     this.socket = this._socketService.getSocket();
                     this.players = [];
                     this.socket.emit('game.listPlayers', {}, function (data) {
-                        console.log('Getting Playerlist');
+                        console.group();
+                        console.log('game.listPlayers');
                         console.log(data);
-                        _this.players = data;
+                        console.groupEnd();
+                        //this.players = data;
                     });
                     this.socket.on('game.playerLeft', function (data) {
                         console.log(_this.players);
                         console.log(data);
                     });
                     this.socket.on('game.playerJoined', function (data) {
-                        console.log('Player joined: ' + data.name);
                         console.log(data);
                         _this.players.push(data);
                     });
