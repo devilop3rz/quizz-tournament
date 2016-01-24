@@ -45,6 +45,6 @@ export class GameCreationForm {
 	onSubmit() {
 		this.submitted = true;
         this.socket.emit('game.create', this.model);
-		this._router.navigate(['PlayerSettings'])
+		this._router.navigate(['PlayerSettings', {type:'creator'}])
 	}
 }

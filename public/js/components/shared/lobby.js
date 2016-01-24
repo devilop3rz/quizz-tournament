@@ -23,15 +23,17 @@ System.register(['angular2/core', '../../services/socket.service', 'angular2/rou
             }],
         execute: function() {
             Lobby = (function () {
-                function Lobby(_socketService, _routerParams) {
+                function Lobby(_socketService, _routerParams, _router) {
                     var _this = this;
                     this._socketService = _socketService;
                     this._routerParams = _routerParams;
-                    this.isHost = (this._routerParams.get('host') ? true : false);
-                    this.socket = this._socketService.getSocket() || this._socketService.init();
+                    this._router = _router;
+                    this.isCreator = (this._routerParams.get('type') === 'creator') ? true : false;
+                    this.socket = this._socketService.getSocket();
                     this.players = [];
                     this.socket.emit('game.listPlayers', {}, function (data) {
-                        console.log('Getting Gamelist');
+                        console.log('Getting Playerlist');
+                        console.log(data);
                         _this.players = data;
                     });
                     this.socket.on('game.playerLeft', function (data) {
@@ -39,18 +41,31 @@ System.register(['angular2/core', '../../services/socket.service', 'angular2/rou
                         console.log(data);
                     });
                     this.socket.on('game.playerJoined', function (data) {
-                        console.log('Player joined' + data.name);
+                        console.log('Player joined: ' + data.name);
+                        console.log(data);
                         _this.players.push(data);
                     });
+                    this.socket.on('game.started', function (data) {
+                        if (_this._routerParams.get('type') === 'host') {
+                            _this._router.navigate(['GameScreen']);
+                        }
+                        else {
+                            _this._router.navigate(['Gamepad']);
+                        }
+                    });
                 }
+                Lobby.prototype.startGame = function () {
+                    console.log('Start the game');
+                    this.socket.emit('game.start', {});
+                };
                 Lobby = __decorate([
                     core_1.View({
-                        template: "\n        <h1>Lobby</h1>\n        <ul>\n            <li *ngFor=\"#player of players\">{{player.name}}!</li>\n        </ul>\n\n        <button [hidden]=\"!isHost\">StartGame</button>\n    "
+                        template: "\n        <h1>Lobby</h1>\n        <ul>\n            <li *ngFor=\"#player of players\">{{player.name}}!</li>\n        </ul>\n\n        <button [hidden]=\"!isCreator\" (click)=\"startGame()\">StartGame</button>\n    "
                     }),
                     core_1.Component({
                         selector: 'lobby'
                     }), 
-                    __metadata('design:paramtypes', [socket_service_1.SocketService, router_1.RouteParams])
+                    __metadata('design:paramtypes', [socket_service_1.SocketService, router_1.RouteParams, router_1.Router])
                 ], Lobby);
                 return Lobby;
             })();

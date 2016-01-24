@@ -1,6 +1,6 @@
 
 declare var io: {
-    connect(url: string): Socket;
+    connect(url: string, settings:any): Socket;
 }
 
 interface Socket {
@@ -13,16 +13,16 @@ export class SocketService {
 
     private socket:Socket;
 
-    init() {
-        this.socket = io.connect('localhost:3000');
-        window.onbeforeunload = (e) => {
-            this.socket.disconnect();
-        };
-        return this.socket
+    constructor() {
+        this.socket = io.connect('localhost:3000', {
+            reconnection: false
+        });
     }
 
     on(eventName: string, callback: (data: any) => void) {
+        console.log(this.socket)
         this.socket.on(eventName, (data) => {
+            console.log(data)
             callback(data);
         })
     }

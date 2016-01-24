@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core'
 import {NgForm} from 'angular2/common'
-import {Router} from 'angular2/router'
+import {Router, RouteParams} from 'angular2/router'
 import {CarouselSelect} from './carousel-select'
 import {SocketService} from '../../services/socket.service'
 
@@ -49,7 +49,7 @@ export class PlayerSettings {
 	public player:Player = new Player('Default', '', '#123456');
 	private socket
 
-    constructor(public _router: Router, public _socketService:SocketService) { 
+    constructor(public _router: Router, private _routeParams:RouteParams, public _socketService:SocketService) { 
         this.socket = this._socketService.getSocket();
 	}
 
@@ -58,8 +58,14 @@ export class PlayerSettings {
 		console.log('Set player setting:' + this.player.name);
         this.socket.emit('game.join', this.player, (data: any) => {
             console.log('WIlkommen mein nasenbär');
-        })
-		this._router.navigate(['/Lobby'])
+        });
+
+        if (this._routeParams.get('type') === 'creator') {
+			this._router.navigate(['/Lobby', { type: 'creator' }]);
+        } else {
+			this._router.navigate(['/Lobby', { type: 'player' }]);
+        }
+		
 	}
 
 	get diagnostic() { return JSON.stringify(this.player); }

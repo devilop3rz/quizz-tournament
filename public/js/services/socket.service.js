@@ -5,17 +5,14 @@ System.register([], function(exports_1) {
         execute: function() {
             SocketService = (function () {
                 function SocketService() {
+                    this.socket = io.connect('localhost:3000', {
+                        reconnection: false
+                    });
                 }
-                SocketService.prototype.init = function () {
-                    var _this = this;
-                    this.socket = io.connect('localhost:3000');
-                    window.onbeforeunload = function (e) {
-                        _this.socket.disconnect();
-                    };
-                    return this.socket;
-                };
                 SocketService.prototype.on = function (eventName, callback) {
+                    console.log(this.socket);
                     this.socket.on(eventName, function (data) {
+                        console.log(data);
                         callback(data);
                     });
                 };

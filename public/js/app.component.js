@@ -69,6 +69,10 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
                             component: splashscreen_1.Splashscreen,
                             name: 'Splashscreen'
                         }, {
+                            path: '/lobby/:type',
+                            component: lobby_1.Lobby,
+                            name: 'Lobby'
+                        }, {
                             path: '/lobby',
                             component: lobby_1.Lobby,
                             name: 'Lobby'
@@ -89,7 +93,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
                             component: gamelist_1.GameList,
                             name: 'GameSelection'
                         }, {
-                            path: '/player/settings',
+                            path: '/player/settings/:type',
                             component: playersettings_1.PlayerSettings,
                             name: 'PlayerSettings'
                         }, {

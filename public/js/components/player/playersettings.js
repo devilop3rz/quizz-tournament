@@ -34,8 +34,9 @@ System.register(['angular2/core', 'angular2/router', './carousel-select', '../..
                 return Player;
             })();
             PlayerSettings = (function () {
-                function PlayerSettings(_router, _socketService) {
+                function PlayerSettings(_router, _routeParams, _socketService) {
                     this._router = _router;
+                    this._routeParams = _routeParams;
                     this._socketService = _socketService;
                     this.player = new Player('Default', '', '#123456');
                     this.socket = this._socketService.getSocket();
@@ -46,7 +47,12 @@ System.register(['angular2/core', 'angular2/router', './carousel-select', '../..
                     this.socket.emit('game.join', this.player, function (data) {
                         console.log('WIlkommen mein nasenbär');
                     });
-                    this._router.navigate(['/Lobby']);
+                    if (this._routeParams.get('type') === 'creator') {
+                        this._router.navigate(['/Lobby', { type: 'creator' }]);
+                    }
+                    else {
+                        this._router.navigate(['/Lobby', { type: 'player' }]);
+                    }
                 };
                 Object.defineProperty(PlayerSettings.prototype, "diagnostic", {
                     get: function () { return JSON.stringify(this.player); },
@@ -59,7 +65,7 @@ System.register(['angular2/core', 'angular2/router', './carousel-select', '../..
                         directives: [carousel_select_1.CarouselSelect],
                         template: "\n\t\t{{diagnostic}}\n\n\t\t<h1>Setup your Player</h1>\n\n\t\t<form (ngSubmit)=\"onSubmit()\">\n\t\t\t<div class=\"form-group\">\n\t\t\t\t<label for=\"player-name\">Name:</label>\n\t\t\t\t<input type=\"text\" id=\"player-name\" [(ngModel)]=\"player.name\"/>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\">\n\t\t\t\t<label for=\"player-pic\">Char:</label>\n\t\t\t\t<select name=\"player-pic\" id=\"player-pic\" [(ngModel)]=\"player.pic\">\n\t\t\t\t\t<option>SpielerChar1</option>\n\t\t\t\t\t<option>SpielerChar2</option>\n\t\t\t\t\t<option>SpielerChar3</option>\n\t\t\t\t</select>\n\t\t\t\t<carousel-select></carousel-select>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\">\n\t\t\t\t<label for=\"player-color\">Color:</label>\n\t\t\t\t<input type=\"color\" id=\"player-color\" [(ngModel)]=\"player.color\"/>\n\t\t\t</div>\n\t\t\t<button type=\"submit\">Ready</button>\n\t\t</form>\n\t"
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, socket_service_1.SocketService])
+                    __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, socket_service_1.SocketService])
                 ], PlayerSettings);
                 return PlayerSettings;
             })();

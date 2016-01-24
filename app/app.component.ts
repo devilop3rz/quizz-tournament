@@ -30,9 +30,13 @@ import {SocketService} from './services/socket.service'
     	component: Splashscreen, 
     	name: 'Splashscreen'
     },{ 
-    	path: '/lobby', 
+    	path: '/lobby/:type', 
     	component: Lobby, 
     	name: 'Lobby'
+    }, {
+        path: '/lobby',
+        component: Lobby,
+        name: 'Lobby'
     },
 
     //Host Routes
@@ -53,7 +57,7 @@ import {SocketService} from './services/socket.service'
     	component: GameList, 
     	name: 'GameSelection'
     },{
-      	path: '/player/settings', 
+      	path: '/player/settings/:type', 
     	component: PlayerSettings, 
     	name: 'PlayerSettings'
     },{ 

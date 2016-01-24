@@ -36,7 +36,7 @@ System.register(['angular2/core', 'angular2/router', './game.class', '../../serv
                 GameCreationForm.prototype.onSubmit = function () {
                     this.submitted = true;
                     this.socket.emit('game.create', this.model);
-                    this._router.navigate(['PlayerSettings']);
+                    this._router.navigate(['PlayerSettings', { type: 'creator' }]);
                 };
                 GameCreationForm = __decorate([
                     core_1.Component({

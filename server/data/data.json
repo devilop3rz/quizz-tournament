@@ -1,0 +1,618 @@
+[
+  {
+    "question": "Wie viele Einwohner hat die Bundesrepublik Deutschland?",
+    "answerA": "etwa 80 Mio. Einwohner",
+    "answerB": "etwa 200 Mio. Einwohner",
+    "answerC": "etwa 500 Mio. Einwohner",
+    "answerD": "etwa 50 Mio. Einwohner",
+    "correct": 0
+  },
+  {
+    "question": "Wie viele Bundesländer hat die Bundesrepublik Deutschland?",
+    "answerA": "15",
+    "answerB": "11",
+    "answerC": "16",
+    "answerD": "20",
+    "correct": 2
+  },
+  {
+    "question": "Wer wählt den Bundeskanzler?",
+    "answerA": "Das Volk",
+    "answerB": "Die Mitglieder des Bundestages",
+    "answerC": "Der Ältestenrat",
+    "answerD": "Die Regierung",
+    "correct": 1
+  },
+  {
+    "question": "Wer wählt den Bundespräsidenten?",
+    "answerA": "Die Mitglieder der Bundesversammlung",
+    "answerB": "Die Mitglieder des Bundestages",
+    "answerC": "Der Ältestenrat",
+    "answerD": "Die Bundesländer",
+    "correct": 0
+  },
+  {
+    "question": "Wer schrieb die \"Räuber\"?",
+    "answerA": "Johann Wolfgang von Goethe",
+    "answerB": "Georg Büchner",
+    "answerC": "Friedrich Schiller",
+    "answerD": "Heinrich Heine",
+    "correct": 2
+  },
+  {
+    "question": "Wer schrieb die \"Blechtrommel\"?",
+    "answerA": "Dieter Hildebrandt",
+    "answerB": "Heinrich Heine",
+    "answerC": "Georg Büchner",
+    "answerD": "Günter Grass",
+    "correct": 3
+  },
+  {
+    "question": "Wer schrieb \"Ansichten eines Clowns\"?",
+    "answerA": "Heinrich Böll",
+    "answerB": "Siegfried Lenz",
+    "answerC": "Johannes Mario Simmel",
+    "answerD": "Erich Kästner",
+    "correct": 0
+  },
+  {
+    "question": "Wofür steht der 3. Oktober in Deutschland?",
+    "answerA": "Tag der Deutschen Einheit",
+    "answerB": "Machtergreifung Adolf Hitlers",
+    "answerC": "Reformationstag",
+    "answerD": "Nationalfeiertag anlässlich des Weltkriegsendes",
+    "correct": 0
+  },
+  {
+    "question": "Was geschah am 20. Juli 1944?",
+    "answerA": "Konferenz von Teheran",
+    "answerB": "Versenkung des Schlachtschiffs Bismarck",
+    "answerC": "Attentat auf Hitler durch Graf Schenk von Stauffenberg",
+    "answerD": "Kapitulation der deutschen Truppen in Afrika",
+    "correct": 2
+  },
+  {
+    "question": "Wie schreibt man ein Fünftel als Prozentzahl?",
+    "answerA": "50 Prozent",
+    "answerB": "20 Prozent",
+    "answerC": "25 Prozent",
+    "answerD": "5 Prozent",
+    "correct": 1
+  },
+  {
+    "question": "Wie teilt man durch einen Bruch?",
+    "answerA": "Indem man mit dem Kehrwert multipliziert",
+    "answerB": "Indem man den Kehrwert potenziert",
+    "answerC": "Indem man die Primzahl zieht",
+    "answerD": "Indem man den Satz des Pythagoras anwendet",
+    "correct": 0
+  },
+  {
+    "question": "Wie heißen die vier Evangelien der Bibel?",
+    "answerA": "Lukas, Markus, Brutus, Matthäus",
+    "answerB": "Matthäus, Petrus, Markus, Lukas",
+    "answerC": "Matthäus, Markus, Lukas, Johannes",
+    "answerD": "Matthäus, Thomas, Petrus, Paulus",
+    "correct": 2
+  },
+  {
+    "question": "Wie viele Apostel hatte Jesus um sich versammelt?",
+    "answerA": "10",
+    "answerB": "15",
+    "answerC": "11",
+    "answerD": "12",
+    "correct": 3
+  },
+  {
+    "question": "Wer gilt als Erfinder des Buchdrucks in Deutschland?",
+    "answerA": "Johannes Gutenberg",
+    "answerB": "Albrecht Dürer",
+    "answerC": "Martin Luther",
+    "answerD": "Christian Huygens",
+    "correct": 0
+  },
+  {
+    "question": "Wer erfand das Telefon?",
+    "answerA": "Thomas Edison",
+    "answerB": "Alexander Graham Bell und Philip Reis",
+    "answerC": "William Derham",
+    "answerD": "John Ericcson",
+    "correct": 1
+  },
+  {
+    "question": "Wer entdeckte das Penicillin?",
+    "answerA": "Robert Koch",
+    "answerB": "Alexander Fleming",
+    "answerC": "Louis Pasteur",
+    "answerD": "Sir Joseph Whitworth",
+    "correct": 1
+  },
+  {
+    "question": "In welchem Jahrhundert wurde Amerika entdeckt?",
+    "answerA": "17. Jahrhundert (1656)",
+    "answerB": "16. Jahrhundert (1587)",
+    "answerC": "14. Jahrhundert (1399)",
+    "answerD": "15. Jahrhundert (1492)",
+    "correct": 3
+  },
+  {
+    "question": "Wann begann die Reformation?",
+    "answerA": "Im 16. Jahrhundert (1517)",
+    "answerB": "Im 15. Jahrhundert (1413)",
+    "answerC": "Im 17. Jahrhundert (1618)",
+    "answerD": "Im 13. Jahrhundert (1299)",
+    "correct": 0
+  },
+  {
+    "question": "Wer betrat als erster Mensch den Mond?",
+    "answerA": "Juri Alexejewitsch Gagarin",
+    "answerB": "Neil Armstrong",
+    "answerC": "Edwin Aldrin",
+    "answerD": "Michael Collins",
+    "correct": 1
+  },
+  {
+    "question": "Wann fand der 2. Weltkrieg in Europa statt?",
+    "answerA": "1.9.1940 - 8.5.1945",
+    "answerB": "1.9.1939 - 8.5.1944",
+    "answerC": "1.9.1939 - 8.5.1945",
+    "answerD": "1.9.1938 - 8.5.1945",
+    "correct": 2
+  },
+  {
+    "question": "Wofür steht die Abkürzung \"www\"?",
+    "answerA": "world wide working",
+    "answerB": "world wide web",
+    "answerC": "weight watchers wishes",
+    "answerD": "world wide wait",
+    "correct": 1
+  },
+  {
+    "question": "Wo leben die Pinguine?",
+    "answerA": "Antarktis, Falklandinseln, SW-Afrika",
+    "answerB": "Arktis, Papua Neuguinea",
+    "answerC": "Australien, Nordamerika",
+    "answerD": "Ozeanien, Arktis",
+    "correct": 0
+  },
+  {
+    "question": "Wofür steht die Abkürzung \"CAD\"?",
+    "answerA": "Creative Art Director",
+    "answerB": "Chinese Antarctic Department",
+    "answerC": "Computer Animated Dishes",
+    "answerD": "Computer Aided Design ",
+    "correct": 3
+  },
+  {
+    "question": "Wann begann die Französische Revolution? ",
+    "answerA": "1699 ",
+    "answerB": "1789 ",
+    "answerC": "1750 ",
+    "answerD": "1799 ",
+    "correct": 1
+  },
+  {
+    "question": "Wer schrieb die \"Buddenbrooks\"?",
+    "answerA": "Johann Wolfgang von Goethe",
+    "answerB": "Georg Büchner",
+    "answerC": "Thomas Mann",
+    "answerD": "Heinrich Heine",
+    "correct": 2
+  },
+  {
+    "question": "Welches Teil gehört zum Innenohr?",
+    "answerA": "Hammer",
+    "answerB": "Amboss",
+    "answerC": "Schnecke",
+    "answerD": "Steigbügel",
+    "correct": 2
+  },
+  {
+    "question": "Welche Hauptstadt ist falsch?",
+    "answerA": "Australien - Canberra",
+    "answerB": "Brasilien - Brasilia",
+    "answerC": "Schweiz - Zürich",
+    "answerD": "Malaysia - Kuala Lumpur",
+    "correct": 2
+  },
+  {
+    "question": "Quecksilber ist ...",
+    "answerA": "eine Legierung",
+    "answerB": "ein Metall",
+    "answerC": "eine Verbindung",
+    "answerD": "ein Mineral",
+    "correct": 1
+  },
+  {
+    "question": "Eine mit Inhalten aus der Tierwelt gestaltete kurze Erzählung, die häufig eine Belehrung enthält, bezeichnet man als ...",
+    "answerA": "Anekdote",
+    "answerB": "Fabel",
+    "answerC": "Gleichnis",
+    "answerD": "Legende",
+    "correct": 1
+  },
+  {
+    "question": "Generell gilt: Wasser ist immer ... als Fett.",
+    "answerA": "weicher",
+    "answerB": "schwerer",
+    "answerC": "härter",
+    "answerD": "leichter",
+    "correct": 1
+  },
+  {
+    "question": "Das Phänomen der ... basiert auf der Tatsache, daß die Umdrehungsachse der Erde nicht senkrecht zur Erdbahnebene steht.",
+    "answerA": "Jahreszeiten",
+    "answerB": "Sonnenfinsternis",
+    "answerC": "Mondfinsternis",
+    "answerD": "Gezeiten",
+    "correct": 0
+  },
+  {
+    "question": "Wer wurde als erster zum Ministerpräsidenten von Sachsen gewählt?",
+    "answerA": "Lothar de Maiziere",
+    "answerB": "Manfred Stolpe",
+    "answerC": "Oskar Lafontaine",
+    "answerD": "Kurt Biedenkopf",
+    "correct": 3
+  },
+  {
+    "question": "In welchem Alter erlangt man das passive Wahlrecht?",
+    "answerA": "mit 18",
+    "answerB": "mit 21",
+    "answerC": "mit 23",
+    "answerD": "mit 25",
+    "correct": 0
+  },
+  {
+    "question": "Wenn in Deutschland ein neues Gesetz entstanden ist, wird es zuletzt gegengezeichnet vom ...",
+    "answerA": "Bundeskanzler",
+    "answerB": "Bundespräsidenten",
+    "answerC": "Bundestagspräsidenten",
+    "answerD": "von den Bundesministern",
+    "correct": 1
+  },
+  {
+    "question": "Welcher Staat ist NATO-Mitglied?",
+    "answerA": "Österreich",
+    "answerB": "Finnland",
+    "answerC": "Schweden",
+    "answerD": "Norwegen",
+    "correct": 3
+  },
+  {
+    "question": "Was versteht man unter Hammelsprung?",
+    "answerA": "Abstimmungsverfahren zur Wahl eines Parteivorsitzenden",
+    "answerB": "Auseinanderbrechen einer Fraktion",
+    "answerC": "Abstimmungsverfahren mit Ja- und Nein-Türen",
+    "answerD": "nichts von alledem",
+    "correct": 2
+  },
+  {
+    "question": "Welches Ressort nimmt seit Jahren den größten Haushaltsetat ein?",
+    "answerA": "Verteidigung",
+    "answerB": "Arbeit und Soziales",
+    "answerC": "Verkehr",
+    "answerD": "Wissenschaft und Bildung",
+    "correct": 1
+  },
+  {
+    "question": "Wann wurde die Deutsche Mark eingeführt?",
+    "answerA": "1945",
+    "answerB": "1948",
+    "answerC": "1949",
+    "answerD": "1946",
+    "correct": 2
+  },
+  {
+    "question": "Wer sagte, die Politik sei die Kunst des Möglichen?",
+    "answerA": "Bismarck",
+    "answerB": "Truman",
+    "answerC": "Adenauer",
+    "answerD": "Churchill",
+    "correct": 0
+  },
+  {
+    "question": "Wo ist der Sitz des Europarates?",
+    "answerA": "Genf",
+    "answerB": "Brüssel",
+    "answerC": "Straßburg",
+    "answerD": "Wien",
+    "correct": 2
+  },
+  {
+    "question": "Der amtliche Name des 1. Deutschen Reiches lautete ...",
+    "answerA": "Kleindeutsches Reich",
+    "answerB": "Deutsches Kaiserreich",
+    "answerC": "Heiliges Römisches Reich Deutscher Nation",
+    "answerD": "Großdeutsches Reich",
+    "correct": 2
+  },
+  {
+    "question": "Welche Nationalität hatte Kolumbus?",
+    "answerA": "Italiener",
+    "answerB": "Spanier",
+    "answerC": "Grieche",
+    "answerD": "Portugiese",
+    "correct": 0
+  },
+  {
+    "question": "Mit der Flucht Mohammeds von Mekka nach Medina beginnt im Islam eine eigene Zeitrechnung. Wann fand dies nach unserer Zeitrechnung statt?",
+    "answerA": "518 v.Chr.",
+    "answerB": "400 v.Chr.",
+    "answerC": "612 n.Chr.",
+    "answerD": "622 n.Chr.",
+    "correct": 3
+  },
+  {
+    "question": "Ignatius von Loyola war",
+    "answerA": "ein spanischer Freiheitskämpfer",
+    "answerB": "der Gründer des Deutschen Ritterordens",
+    "answerC": "der Gründer des Jesuitenordens",
+    "answerD": "ein Steuermann unter Christoph Kolumbus",
+    "correct": 2
+  },
+  {
+    "question": "Marie Curie war",
+    "answerA": "Köchin",
+    "answerB": "Tänzerin",
+    "answerC": "Malerin",
+    "answerD": "Physikerin",
+    "correct": 3
+  },
+  {
+    "question": "Benjamin Franklin war der",
+    "answerA": "Erfinder des Blitzableiters",
+    "answerB": "Erfinder des Glasglühlichts",
+    "answerC": "Erfinder des Thermometers",
+    "answerD": "Entdecker des Wechselstroms",
+    "correct": 0
+  },
+  {
+    "question": "Leonardo da Vinci war der",
+    "answerA": "Erfinder des Luftreifens",
+    "answerB": "Erfinder des Sturzhelms",
+    "answerC": "Erfinder des Fallschirms",
+    "answerD": "Erfinder der Zwölftonmusik",
+    "correct": 2
+  },
+  {
+    "question": "Wie bezeichnet man die gesamtwirtschaftliche Größe der in einem Jahr produzierten Sachgüter und Dienstleistungen?",
+    "answerA": "Sozialvermögen",
+    "answerB": "Sozialprodukt",
+    "answerC": "Volksvermögen",
+    "answerD": "Volkseinkommen",
+    "correct": 1
+  },
+  {
+    "question": "Aus welcher Steuer ergibt sich das meiste Steueraufkommen?",
+    "answerA": "Vermögenssteuer",
+    "answerB": "Umsatzsteuer",
+    "answerC": "Lohnsteuer",
+    "answerD": "Mineralölsteuer",
+    "correct": 2
+  },
+  {
+    "question": "Was ist ein Pfandbrief?",
+    "answerA": "eine festverzinsliche Schuldverschreibung",
+    "answerB": "Urkunde eines Leihhauses",
+    "answerC": "eine Hypothek",
+    "answerD": "Verpflichtungserklärung eines Schuldners",
+    "correct": 0
+  },
+  {
+    "question": "Welches Land grenzt nicht ans Schwarze Meer?",
+    "answerA": "Rußland",
+    "answerB": "Rumänien",
+    "answerC": "Bulgarien",
+    "answerD": "Tschechien",
+    "correct": 3
+  },
+  {
+    "question": "Was ist die Tundra?",
+    "answerA": "eine gebirgige Landschaft",
+    "answerB": "eine wüstenähnliche Landschaft",
+    "answerC": "eine steinige Graslandschaft",
+    "answerD": "eine baumlose Kältesteppenlandschaft",
+    "correct": 3
+  },
+  {
+    "question": "Wie alt ist die Erde?",
+    "answerA": "eine Million Jahre",
+    "answerB": "10 Millionen Jahre",
+    "answerC": "mehr als 100 Millionen Jahre",
+    "answerD": "weniger als eine Million Jahre",
+    "correct": 2
+  },
+  {
+    "question": "Renoir gehörte zu den Malern, die das moderne Leben in der Großstadt malten. Die Stilgruppe heißt ...",
+    "answerA": "Expressionismus",
+    "answerB": "Impressionismus",
+    "answerC": "Realismus",
+    "answerD": "Existenzialismus",
+    "correct": 1
+  },
+  {
+    "question": "Die Sixtinische Kapelle im Vatikan malte vor allem ...",
+    "answerA": "Da Vinci",
+    "answerB": "Tizian",
+    "answerC": "Michelangelo",
+    "answerD": "Fräulein Leinenweber",
+    "correct": 2
+  },
+  {
+    "question": "Welcher Notendreiklang ergibt einen C-Dur-Akkord?",
+    "answerA": "C-D-G",
+    "answerB": "D-F-A",
+    "answerC": "C-E-G",
+    "answerD": "C-D-U",
+    "correct": 2
+  },
+  {
+    "question": "Wer komponierte \"Das Land des Lächelns\"?",
+    "answerA": "Carl Millöcker",
+    "answerB": "Franz Lehár",
+    "answerC": "Johann Strauß",
+    "answerD": "Volker Rollenbeck",
+    "correct": 1
+  },
+  {
+    "question": "Größter Meister der Barockmusik ist neben Bach ...",
+    "answerA": "Joseph Haydn",
+    "answerB": "Wolfgang Amadeus Mozart",
+    "answerC": "Roland Wolter",
+    "answerD": "Georg Friedrich Händel",
+    "correct": 3
+  },
+  {
+    "question": "Bei welcher Sportart kann man einen \"Krebs fangen\"?",
+    "answerA": "Rudern",
+    "answerB": "Schwimmen",
+    "answerC": "Tennis",
+    "answerD": "Basketball",
+    "correct": 0
+  },
+  {
+    "question": "Nach wie vielen Aufschlägen wechselt in der Regel beim Tischtennis der Aufschlag? Nach ...",
+    "answerA": "5 Aufschlägen",
+    "answerB": "7 Aufschlägen",
+    "answerC": "2 Aufschlägen",
+    "answerD": "10 Aufschlägen",
+    "correct": 2
+  },
+  {
+    "question": "Von der Sonne bis zur Erde braucht Licht ...",
+    "answerA": "8 Minuten 13 Sekunden",
+    "answerB": "1 Stunde 3 Minuten",
+    "answerC": "2 Stunden 14 Minuten",
+    "answerD": "47 Sekunden",
+    "correct": 0
+  },
+  {
+    "question": "Was ist ein Zyklotron?",
+    "answerA": "Beschleuniger für Elementarteilchen",
+    "answerB": "freiwerdendes Teilchen bei der Kernspaltung",
+    "answerC": "Gezeitenmesser",
+    "answerD": "eine einäugige Sagengestalt",
+    "correct": 0
+  },
+  {
+    "question": "Können Diamanten verbrennen?",
+    "answerA": "ja, ohne Rückstand zu Kohlendioxyd",
+    "answerB": "nein, sie sind zu rein",
+    "answerC": "nein, sie sind zu hart",
+    "answerD": "ja, ohne Rückstand zu Kohlenmonoxyd",
+    "correct": 0
+  },
+  {
+    "question": "Welcher Teil der Zelle spielt bei der Fortpflanzung eine Hauptrolle?",
+    "answerA": "Zellflüssigkeit",
+    "answerB": "Zellmantel",
+    "answerC": "Zellkern",
+    "answerD": "Endoplasmatisches Retikulum",
+    "correct": 2
+  },
+  {
+    "question": "Was verwendet man bei der Pockenimpfung als Impfstoff?",
+    "answerA": "Heilserum",
+    "answerB": "Gegengift",
+    "answerC": "Krankheitserreger",
+    "answerD": "Thrombozyten",
+    "correct": 2
+  },
+  {
+    "question": "Was ist ein Ion?",
+    "answerA": "ein chemisches Element",
+    "answerB": "ein elektrisch geladenes Atom",
+    "answerC": "eine physikalische Maßeinheit für Elektrizität",
+    "answerD": "ein Halbtonschritt",
+    "correct": 1
+  },
+  {
+    "question": "Bei welcher Temperatur liegt der absolute Nullpunkt?",
+    "answerA": "bei etwa 0 Grad Celsius",
+    "answerB": "bei etwa minus 333 Grad Celsius",
+    "answerC": "bei etwa minus 273 Grad Celsius",
+    "answerD": "bei etwa minus 100 Grad Kelvin",
+    "correct": 2
+  },
+  {
+    "question": "Was ist ein Atoll?",
+    "answerA": "kleines Atom",
+    "answerB": "niedriges ringförmiges Koralleneiland",
+    "answerC": "Bikini",
+    "answerD": "norwegische Sagengestalt",
+    "correct": 1
+  },
+  {
+    "question": "Wann wird Lackmuspapier rot?",
+    "answerA": "in Kontakt mit Säuren",
+    "answerB": "in Kontakt mit Basen",
+    "answerC": "in Kontakt mit Sauerstoff",
+    "answerD": "in Kontakt mit Kohlenstoff",
+    "correct": 0
+  },
+  {
+    "question": "Wie viele Elemente kennt die Chemie?",
+    "answerA": "weniger als 100",
+    "answerB": "unzählige",
+    "answerC": "etwa 100",
+    "answerD": "4",
+    "correct": 2
+  },
+  {
+    "question": "Aus welchem Stoff baut sich die organische Chemie auf?",
+    "answerA": "Kohlenstoff",
+    "answerB": "Wasserstoff",
+    "answerC": "Stickstoff",
+    "answerD": "Sauerstoff",
+    "correct": 0
+  },
+  {
+    "question": "Wie groß ist die Entfernung Erde-Mond?",
+    "answerA": "297000 km",
+    "answerB": "3645000 km",
+    "answerC": "384000 km",
+    "answerD": "36000 km",
+    "correct": 2
+  },
+  {
+    "question": "Bei welcher Temperatur hat Wasser seine größte Dichte?",
+    "answerA": "bei 4 Grad Celsius",
+    "answerB": "bei 0 Grad Celsius",
+    "answerC": "bei 11 Grad Celsius",
+    "answerD": "bei 9,3 Grad Celsius",
+    "correct": 0
+  },
+  {
+    "question": "Wer wurde als \"Commandante\" bezeichnet?",
+    "answerA": "Fidel Castro",
+    "answerB": "Franz Beckenbauer",
+    "answerC": "Generalfeldmarschall Rommel",
+    "answerD": "Che Guevara",
+    "correct": 3
+  },
+  {
+    "question": "Wie groß ist die Schallgeschwindigkeit in Luft?",
+    "answerA": "ca. 400 m/s",
+    "answerB": "ca. 340 m/s",
+    "answerC": "ca. 400 km/s",
+    "answerD": "ca. 40 km/s",
+    "correct": 1
+  },
+  {
+    "question": "Wie heißt der niedersächsische Ministerpräsident?",
+    "answerA": "Schmuck",
+    "answerB": "Rau",
+    "answerC": "Wullf",
+    "answerD": "Rangnick",
+    "correct": 2
+  },
+  {
+    "question": "Wie heißt der niedersächsische Kultusminister ?",
+    "answerA": "Fontane",
+    "answerB": "Busemann",
+    "answerC": "Lemke",
+    "answerD": "Buhlman",
+    "correct": 1
+  }
+]

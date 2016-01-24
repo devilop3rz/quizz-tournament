@@ -1,6 +1,6 @@
 import {Component,View} from 'angular2/core';
 import {SocketService} from '../../services/socket.service';
-import {RouteParams} from 'angular2/router'
+import {RouteParams, Router} from 'angular2/router'
 
 @View ({
 	template: `
@@ -9,7 +9,7 @@ import {RouteParams} from 'angular2/router'
             <li *ngFor="#player of players">{{player.name}}!</li>
         </ul>
 
-        <button [hidden]="!isHost">StartGame</button>
+        <button [hidden]="!isCreator" (click)="startGame()">StartGame</button>
     `
 })
 
@@ -21,15 +21,16 @@ export class Lobby {
 
     private socket;
     public players: any;
-    public isHost: boolean;
+    public isCreator: boolean;
 
-	constructor(private _socketService:SocketService, private _routerParams:RouteParams) {
-        this.isHost = (this._routerParams.get('host') ? true : false;
-        this.socket = this._socketService.getSocket() || this._socketService.init();
+	constructor(private _socketService:SocketService, private _routerParams:RouteParams, private _router:Router) {
+        this.isCreator = (this._routerParams.get('type') === 'creator') ? true : false;
+        this.socket = this._socketService.getSocket();
         this.players = [];
 
         this.socket.emit('game.listPlayers', {}, (data) => {
-            console.log('Getting Gamelist')
+            console.log('Getting Playerlist');
+            console.log(data)
             this.players = data;
         });
 
@@ -39,8 +40,22 @@ export class Lobby {
         });
 
         this.socket.on('game.playerJoined', (data) => {
-            console.log('Player joined' + data.name);
+            console.log('Player joined: ' + data.name);
+            console.log(data)
             this.players.push(data);
         });
+
+        this.socket.on('game.started', (data) => {
+        	if (this._routerParams.get('type') === 'host') {
+				this._router.navigate(['GameScreen'])
+        	} else {
+				this._router.navigate(['Gamepad'])
+        	}
+        });
+	}
+
+	startGame() {
+		console.log('Start the game')
+		this.socket.emit('game.start', {});
 	}
 }

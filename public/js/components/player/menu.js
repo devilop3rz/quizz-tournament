@@ -26,17 +26,21 @@ System.register(['angular2/core', 'angular2/router', '../../services/socket.serv
                 function Menu(_socketService) {
                     var _this = this;
                     this._socketService = _socketService;
-                    this.socket = this._socketService.getSocket() || this._socketService.init();
+                    this.socket = this._socketService.getSocket();
                     this.socket.emit('game.listGames', {}, function (data) {
                         console.log('Gamestate:' + data);
                         _this.gameCreated = data;
+                    });
+                    this.socket.on('game.created', function (data) {
+                        console.log('A game has been created');
+                        _this.gameCreated = true;
                     });
                 }
                 Menu = __decorate([
                     core_1.Component({
                         selector: 'menu',
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        template: "\n\t\t<header>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-xs-12\"><h3>Menu</h3></div>\n\t\t\t</div>\n\t\t</header>\n\t\t<section>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-xs-12\">\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li><a [routerLink]=\"['CreateGame']\">Create Game!</a></li>\n\t\t\t\t\t\t<li [hidden]=\"!gameCreated\"><a [routerLink]=\"['PlayerSettings']\" >Join Game!</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</section>\n\t"
+                        template: "\n\t\t<header>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-xs-12\"><h3>Menu</h3></div>\n\t\t\t</div>\n\t\t</header>\n\t\t<section>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-xs-12\">\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li><a [routerLink]=\"['CreateGame']\">Create Game!</a></li>\n\t\t\t\t\t\t<li [hidden]=\"!gameCreated\"><a [routerLink]=\"['PlayerSettings', {type:'player'}]\" >Join Game!</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</section>\n\t"
                     }), 
                     __metadata('design:paramtypes', [socket_service_1.SocketService])
                 ], Menu);

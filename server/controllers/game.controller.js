@@ -5,23 +5,70 @@ var Game = require('./game.class');
 
 module.exports = function (io) {
 
-    var game, createGame, joinGame, gameCreated = false, supersocket, listGames, listPlayers;
-
+    var game, gameCreated = false, supersocket, listGames, listPlayers;
+   
     io.on('connection', function(socket){
-        console.log('A user connected');
+        console.log('A user connected:' + socket.id);
         supersocket = socket;
         socket.emit('welcome', {'aa': 'blabla'});
 
-        socket.on('game.create', createGame);
-        socket.on('game.join', joinGame);
+        // User created a new Game
+        socket.on('game.create', function (data){
+            console.log('A game has just been created')
+            game = new Game(data);
+
+            socket.emit('game.created', {});
+            socket.broadcast.emit('game.created', {});
+        });
+
+        // A user joined the game. He gets added go the game
+        // with the given data
+        socket.on('game.join', function (data) {
+            data.socketId = socket.id;
+            game.addPlayer(data);
+            socket.broadcast.emit('game.playerJoined', data);
+        });
+
+        // Lists all created game instances
         socket.on('game.listGames', listGames);
+
+        // Lists all the players in the created game instance
         socket.on('game.listPlayers', listPlayers);
 
+        // Start the game.
+        socket.on('game.start', function (data, callback) {
+            game.start();
+            socket.emit('game.started', {});
+            socket.broadcast.emit('game.started', {});
+        });
+
+        socket.on('ready', function () {
+            socket.emit('game.question', game.currentQuestion);
+        })
+
+        // Get the next question from the game instance
+        socket.on('game.getQuestion', function(data, callback) {
+            callback(game.getQuestion());
+        });
+
+        // Get the next question from the game instance
+        socket.on('game.sendAnswer', function(data, callback) {
+
+            game.addAnswer(data, function (data) {
+                console.log(data)
+                console.log('all addAnswers are given and checked');
+                console.log(game.getPlayers());
+            });
+            console.log(game.answers.length)
+        });
+
+        // Handle disconnection events. Remove disconnected user 
+        // from game and send the updated player list to the other users
         socket.on('disconnect', function () {
             console.log('disconnected event');
-            console.log(data);
-            io.emit('game.playerLeft', {a:2});
-            supersocket.broadcast.emit('game.playerLeft', {haselnuss:'123'})
+            socket.emit('game.playerLeft', {id:socket.id})
+            io.emit('game.playerLeft', {id:socket.id})
+
         });
     });
 
@@ -31,16 +78,8 @@ module.exports = function (io) {
     };
 
     listPlayers = function(data, callback) {
+        console.log('Listing Players')
         callback(game.getPlayers());
     };
 
-    createGame = function(data) {
-        game = new Game();
-        supersocket.emit('game.created');
-    };
-
-    joinGame = function(data) {
-        game.addPlayer(data);
-        supersocket.broadcast.emit('game.playerJoined', data);
-    };
 }
