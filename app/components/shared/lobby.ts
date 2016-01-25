@@ -24,17 +24,13 @@ export class Lobby {
     public isCreator: boolean;
 
 	constructor(private _socketService:SocketService, private _routerParams:RouteParams, private _router:Router) {
+
         this.isCreator = (this._routerParams.get('type') === 'creator') ? true : false;
         this.socket = this._socketService.getSocket();
         this.players = [];
 
         this.socket.emit('game.listPlayers', {}, (data) => {
-			console.group();
-        	console.log('game.listPlayers')
-        	console.log(data)
-			console.groupEnd();
-
-            //this.players = data;
+            this.players = data;
         });
 
         this.socket.on('game.playerLeft', (data) => {
@@ -43,16 +39,16 @@ export class Lobby {
         });
 
         this.socket.on('game.playerJoined', (data) => {
-        	console.log(data)
+            console.log(data)
             this.players.push(data);
         });
 
         this.socket.on('game.started', (data) => {
-        	if (this._routerParams.get('type') === 'host') {
-				this._router.navigate(['GameScreen'])
-        	} else {
-				this._router.navigate(['Gamepad'])
-        	}
+            if (this._routerParams.get('type') === 'host') {
+                this._router.navigate(['GameScreen'])
+            } else {
+                this._router.navigate(['Gamepad'])
+            }
         });
 	}
 

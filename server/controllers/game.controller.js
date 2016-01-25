@@ -35,7 +35,6 @@ module.exports = function (io) {
 
         // Lists all the players in the created game instance
         socket.on('game.listPlayers', function(data, callback) {
-            console.log('Listing Players');
             var players = game.getPlayers();
             callback(players);
         });

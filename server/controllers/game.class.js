@@ -52,7 +52,8 @@ class Game {
 
     addPlayer(playerData) {
 
-        this.players[playerData.socketId] = playerData;
+        //this.players[playerData.socketId] = playerData;
+        this.players.push(new Player(playerData));
     }
 
     removePlayer(data) {
